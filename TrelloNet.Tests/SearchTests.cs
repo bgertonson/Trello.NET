@@ -53,6 +53,7 @@ namespace TrelloNet.Tests
                 Pinned = true,
                 Url = "https://trello.com/b/J9JUdoYV/welcome-board",
                 Id = Constants.WelcomeBoardId,
+				ShortLink = "J9JUdoYV",
                 Prefs = new BoardPreferences
                 {
                     Comments = CommentPermission.Members,
@@ -90,6 +91,7 @@ namespace TrelloNet.Tests
                 Due = new DateTime(2015, 01, 01, 09, 00, 00),
                 Labels = new List<Card.Label>(),
                 IdShort = 1,
+				ShortLink = "pD2NljjG",
 				Url = "https://trello.com/c/pD2NljjG/1-welcome-to-trello",
                 ShortUrl = "https://trello.com/c/pD2NljjG",
                 Pos = 32768,

@@ -1115,9 +1115,9 @@ namespace TrelloNet.Tests
 				FullName = "Trello",
 				Username = "trello",
 				Id = "4e6a7fad05d98b02ba00845c",
-				AvatarHash = "0b71d5ac0f623c09317afa75663e374f",
+				AvatarHash = "a6cc37f6849928acb91064cf65e61cbc",
 				Initials = "T"
 			};
 		}
-    }
+	}
 }

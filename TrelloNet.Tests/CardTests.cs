@@ -619,6 +619,7 @@ namespace TrelloNet.Tests
 				Due = new DateTime(2015, 01, 01, 09, 00, 00),
 				Labels = new List<Card.Label>(),
 				IdShort = 1,
+				ShortLink = "pD2NljjG",
 				Checklists = new List<Card.Checklist>(),
 				Url = "https://trello.com/c/pD2NljjG/1-welcome-to-trello",
                 ShortUrl = "https://trello.com/c/pD2NljjG",

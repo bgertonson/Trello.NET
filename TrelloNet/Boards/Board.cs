@@ -14,6 +14,7 @@ namespace TrelloNet
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)] 
         public bool Pinned { get; set; }
 
+		public string ShortLink { get; set; }
 		public string Url { get; set; }
 		public BoardPreferences Prefs { get; set; }
 		public bool Invited { get; set; }

@@ -578,7 +578,57 @@ namespace TrelloNet.Tests
         }
 
         [Test]
-        public void WithId_AMoveCardFromBoardAction_ReturnsExpectedAction()
+		public void WithId_AMoveCardToBoardAction_WithList_ReturnsExpectedAction()
+		{
+			const string actionId = "529d139be353035b50000bc3";
+
+			var trello = new Trello("a325eddf477b6e614e5cb84deef472c1");
+			trello.Authorize("ea2c4c251613ece39465ff9566c7a2be443e24068612ca0dee57f476761ebda1");
+
+			var expected = new MoveCardToBoardAction
+			{
+				Id = actionId,
+				IdMemberCreator = "5284ee0726a67481680045bf",
+				Date = new DateTime(2013, 12, 02, 23, 11, 23, 769),
+				Data = new MoveCardToBoardAction.ActionData
+				{
+					BoardSource = new BoardId("5284ee0726a67481680045c0"),
+					Board = new BoardName
+					{
+						Name = "The Other Board",
+						Id = "529d1386b687e35145000bae",
+						ShortLink = "turfmXRN"
+					},
+					Card = new CardName
+					{
+						Name = "Welcome to Trello 2!",
+						ShortLink = "I5YS0snW",
+						IdShort = 1,
+						Id = "5284efa689cce63268004223"
+					},
+					List = new ListName()
+					{
+						Name = "To Do",
+						Id = "529d1386b687e35145000baf"
+					}
+				},
+				MemberCreator = new Action.ActionMember()
+				{
+					Id = "5284ee0726a67481680045bf",
+					AvatarHash = null,
+					FullName = "Trello ApiGuy",
+					Initials = "TA",
+					Username = "userapiguy"
+				}
+			}.ToExpectedObject();
+
+			var actual = trello.Actions.WithId(actionId);
+
+			expected.ShouldEqual(actual);
+		}
+
+		[Test]
+		public void WithId_AMoveCardFromBoardAction_ReturnsExpectedAction()
         {
             const string actionId = "4fb3bd0553cd2e1031085484";
 
@@ -704,8 +754,9 @@ namespace TrelloNet.Tests
 		public void WithId_CopyCardAction_ReturnsRightTypeWithValues()
 		{
 			const string actionId = "5284efa689cce63268004224";
-			var trello = new Trello("4db5f5e3efbc86a81cf5f3633432fc64");
-			trello.Authorize("bb03a75e3c7aa28fd3eceed4012f818ba094428458588532cf69e795609e6a4d");
+			var trello = new Trello("a325eddf477b6e614e5cb84deef472c1");
+			trello.Authorize("ea2c4c251613ece39465ff9566c7a2be443e24068612ca0dee57f476761ebda1");
+
 			var expected = new CopyCardAction
 			{
 				Id = actionId,
